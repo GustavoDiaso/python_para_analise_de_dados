@@ -86,3 +86,47 @@ A = np.ones((2, 2), int)
 B = 2 * A
 print(np.block([[A], [B]]))
 print('-'*10)
+
+x = np.arange(10)
+# Convertendo um array unidimensional 1x10 para um bidimensional 2x5
+x.shape = (2,5)
+print(x)
+
+# A seguinte sintaxe é válida para arrays numpy x[0][1] == x[0,1]
+l1 = np.array([[1,2],[3,4]])
+print(l1[0][1])
+print(l1[0,1])
+print('-'*10)
+
+# Convertendo um array unidimensional 1x50 em dois arrays 5x5
+v = np.array(range(50)).reshape(2,5,5)
+
+print('Shape = ', v.shape)
+print('Número de dimensões = ', v.ndim)
+print('Número de elementos = ', v.size)
+print('Tensor v = \n', v)
+print('-'*10)
+
+"O método flatten retorna uma cópia do array com todos os elementos em apenas uma dimensão:"
+j = np.array([[1,2],[3,4]])
+print(j.flatten())
+print('-'*10)
+
+"Média, menor valor e maior valor"
+x = np.arange(10)
+media = x.mean()
+menor_valor = np.min(x)
+arg_max = np.argmax(x)
+print('X =',x)
+print("Média =", media)
+print("Menor valor =", menor_valor)
+print("Arg max =", arg_max)
+print('-'*10)
+
+
+"Utilize np.dot para obter o produto escalar entre dois vetores"
+v1 = np.array([1,2,3])
+v2 = np.array([2,3,4])
+
+print("Produto escalar entre v1 e v2 = ", np.dot(v1,v2))
+print('-'*10)
